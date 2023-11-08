@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Rb of the Player")]
-    public Rigidbody2D playerRB;
+    [Header("Player Rigidbody")]
+    public Rigidbody2D rb;
 
     [Header("The Name of the X Axis Input")]
     public string xAxis;
@@ -14,41 +14,57 @@ public class PlayerMovement : MonoBehaviour
     [Header("Speed of the Payer")]
     public float speed;
 
+    [Header("Player Movement Boundaries")]
+    public Vector2 movementBoundariesMin;
+    public Vector2 movementBoundariesMax;
+
+    [Header("Potency of Jump")]
+    public float jumpForce;
+
     void Start()
     {
-        playerRB = this.gameObject.GetComponent<Rigidbody2D>();
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Right input
-        if (Input.GetAxisRaw(xAxis) > 0)
+        float xMov;
+
+        xMov = Input.GetAxis(xAxis);
+        
+        Vector3 motion = new Vector3(xMov, 0, 0) * speed * Time.deltaTime;
+       
+        Vector3 finalPos = transform.position + motion;
+
+        // Fix Movement in x
+        if (finalPos.x > movementBoundariesMax.x)
         {
-            MovePlayer("right");
+            finalPos.x = movementBoundariesMax.x;
         }
-        // Left input
-        if (Input.GetAxisRaw(xAxis) < 0)
+        if (finalPos.x < movementBoundariesMin.x)
         {
-            MovePlayer("left");
+            finalPos.x = movementBoundariesMin.x;
         }
 
+        // Fix Movement in y
+        if (finalPos.y > movementBoundariesMax.y)
+        {
+            finalPos.y = movementBoundariesMax.y;
+        }
+        if (finalPos.y < movementBoundariesMin.y)
+        {
+            finalPos.y = movementBoundariesMin.y;
+        }
+
+        // Set the correct Final Pos
+        transform.position = finalPos;
+
+        if (Input.GetButtonDown("Jump") && rb.velocity.y == 0)
+        {
+            rb.AddForce(Vector2.up * jumpForce * 100);
+        }
     }
 
-    void MovePlayer(string direction)
-    {
-        if (direction == "right")
-        {
-            playerRB.transform.position = new Vector2(
-                transform.position.x + speed,
-                transform.position.y);
-        }
-        if (direction == "left")
-        {
-            playerRB.transform.position = new Vector2(
-                transform.position.x - speed,
-                transform.position.y);
-        }
-    }
 
 }

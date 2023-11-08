@@ -359,7 +359,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &1884681980
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -398,9 +398,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38de0ec132ff2747bd3320d8be32703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerRB: {fileID: 1884681979}
+  rb: {fileID: 1884681979}
   xAxis: Horizontal
-  speed: 2
+  speed: 10
+  movementBoundariesMin: {x: -8.5, y: -10}
+  movementBoundariesMax: {x: 8.5, y: 100}
+  jumpForce: 5
 --- !u!1 &2075162656
 GameObject:
   m_ObjectHideFlags: 0

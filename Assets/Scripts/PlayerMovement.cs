@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Potency of Jump")]
     public float jumpForce;
 
+    [Header("Double Jump Charges")]
+    public float jumpcharge = 2;
+
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -60,11 +63,25 @@ public class PlayerMovement : MonoBehaviour
         // Set the correct Final Pos
         transform.position = finalPos;
 
-        if (Input.GetButtonDown("Jump") && rb.velocity.y == 0)
+
+        //gonna rewrite jump to try and do double jumps
+        //Original jump code
+        //if (Input.GetButtonDown("Jump") && rb.velocity.y == 0)
+        //{
+        //    rb.AddForce(Vector2.up * jumpForce * 100);
+        //}
+        if(Input.GetButtonDown("Jump") && jumpcharge > 0)
         {
             rb.AddForce(Vector2.up * jumpForce * 100);
+            jumpcharge--;
         }
+
+         
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        jumpcharge = 2;
+    }
 
 }

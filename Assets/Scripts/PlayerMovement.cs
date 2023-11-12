@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Player Rigidbody")]
     public Rigidbody2D rb;
 
+
     [Header("The Name of the X Axis Input")]
     public string xAxis;
 
@@ -23,7 +24,14 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Double Jump Charges")]
     public float jumpcharge = 2;
+    bool onground = true;
+    bool discharge = false;
+    float charger = 0.0f;
 
+    [Header("Dodge Strength")]
+    public float dodgeforce=100;
+    
+    
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -74,14 +82,45 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce * 100);
             jumpcharge--;
+            onground = false;
         }
 
-         
+        //super jump
+        if(Input.GetKey(KeyCode.UpArrow) && onground) 
+        {
+            charger += Time.deltaTime;
+            Debug.Log("charger = " + charger);
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            discharge = true;
+        }
+        if (discharge && onground)
+        {
+            rb.AddForce(Vector2.up * charger * jumpForce *100);
+            onground = false;
+            discharge = false;
+            charger = 0.0f;
+            jumpcharge--;
+        }
+        //current air dodge code. work in progress
+        //if(Input.GetButtonDown("c") && rb.velocity.y!=0)
+        //{
+        //   rb.AddForce(Vector2.left* 100000);
+        //}
+
+
+
     }
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         jumpcharge = 2;
+        onground = true;
+        
     }
 
 }

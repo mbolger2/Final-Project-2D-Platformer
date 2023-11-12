@@ -22,11 +22,15 @@ public class LevelSpawning : MonoBehaviour
     // prefabs when the player reaches a certain
     // y height
     public List<Transform> levels = new List<Transform>();
-    
+
+    private void Start()
+    {
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        if (playerPrefab.position.y >= 3)
+        if (playerPrefab.position.y >= 5)
         {
             // The next level
             Transform nextLevel = levels[Random.Range(0, levels.Count - 1)];

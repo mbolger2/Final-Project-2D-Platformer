@@ -30,6 +30,8 @@ public class LevelSpawning : MonoBehaviour
     // section to be spawned
     public int yCheckpoint = 4;
 
+    Quaternion rotation = Quaternion.identity;
+
     private void Start()
     {
         nextLevel = new Vector3(0, 10, 0);
@@ -40,7 +42,7 @@ public class LevelSpawning : MonoBehaviour
         if (playerPrefab.position.y >= yCheckpoint)
         {
             // ASK JOSE IN CLASS
-            // Instantiate(levels[Random.Range(0, levels.Count - 1)], nextLevel, ?????);
+            Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)], nextLevel, rotation);
 
             // Increase the y level that the sections will be instantiated at
             nextLevel.y += 10;

@@ -11,8 +11,10 @@ public class StopWatch : MonoBehaviour
     // Current time
     public float time;
 
-    //
+    // True if the game is playing (not paused)
     public bool isPlaying;
+
+    public static StopWatch Instance;
 
     // Start is called before the first frame update
     void Start()

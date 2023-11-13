@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class LevelSpawning : MonoBehaviour
 {
-    // The current front piece
-    public Transform currentLevel;
-
     // The position of the player
     public Transform playerPrefab;
 
@@ -16,6 +13,13 @@ public class LevelSpawning : MonoBehaviour
     // y height
     public List<Transform> levels = new List<Transform>();
 
+    // The list that holds the ending level 
+    // prefabs so that when the 1:00 marker
+    // is hit we pull from the list contataining 
+    // the ending level prefabs and not the normal
+    // level prefabs
+    public List<Transform> endingLevels = new List<Transform>();
+
     // The position that the level prefab will be instantiated at
     public Vector3 nextLevel;
 
@@ -23,6 +27,8 @@ public class LevelSpawning : MonoBehaviour
     // section to be spawned
     public int yCheckpoint = 4;
 
+    // Quaternion rotation holder so that the 
+    // level prefabs spawn with no z axis rotation
     Quaternion rotation = Quaternion.identity;
 
     private void Start()
@@ -32,17 +38,27 @@ public class LevelSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerPrefab.position.y >= yCheckpoint)
+        if (Mathf.FloorToInt(StopWatch.Instance.time / 60f) != 1)
         {
-            // ASK JOSE IN CLASS
-            Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)], nextLevel, rotation);
+            if (playerPrefab.position.y >= yCheckpoint)
+            {
+                // Spawn a new level above th player
+                Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)], 
+                    nextLevel, rotation);
 
-            // Increase the y level that the sections will be instantiated at
-            nextLevel.y += 10;
+                // Increase the y level that the sections will be instantiated at
+                nextLevel.y += 10;
 
-            // Increase the y level that the player needs to clear for the next
-            // section to be instantiated
-            yCheckpoint += 10;
+                // Increase the y level that the player needs to clear for the next
+                // section to be instantiated
+                yCheckpoint += 10;
+            }
         }
+        else
+        {
+            Transform endingLevel = Instantiate(endingLevels[Random.Range(0, endingLevels.Count - 1)],
+                nextLevel, rotation);
+        }
+
     }
 }

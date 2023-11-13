@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class LevelSpawning : MonoBehaviour
 {
-    [Header("Level Prefabs")]
-    public Transform levelPrefab1;
-    public Transform levelPrefab2;
-    public Transform levelPrefab3;
-    public Transform levelPrefab4;
-    public Transform levelPrefab5;
-
     // The current front piece
     public Transform currentLevel;
 

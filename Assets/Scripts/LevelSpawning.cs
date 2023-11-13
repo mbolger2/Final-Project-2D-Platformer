@@ -23,19 +23,31 @@ public class LevelSpawning : MonoBehaviour
     // y height
     public List<Transform> levels = new List<Transform>();
 
+    // The position that the level prefab will be instantiated at
+    public Vector3 nextLevel;
+
+    // The y position the player needs to clear for a new
+    // section to be spawned
+    public int yCheckpoint = 4;
+
     private void Start()
     {
-        
+        nextLevel = new Vector3(0, 10, 0);
     }
     // Update is called once per frame
     void Update()
     {
-        if (playerPrefab.position.y >= 5)
+        if (playerPrefab.position.y >= yCheckpoint)
         {
-            // The next level
-            Transform nextLevel = levels[Random.Range(0, levels.Count - 1)];
+            // ASK JOSE IN CLASS
+            // Instantiate(levels[Random.Range(0, levels.Count - 1)], nextLevel, ?????);
 
-            Instantiate(nextLevel);
+            // Increase the y level that the sections will be instantiated at
+            nextLevel.y += 10;
+
+            // Increase the y level that the player needs to clear for the next
+            // section to be instantiated
+            yCheckpoint += 10;
         }
     }
 }

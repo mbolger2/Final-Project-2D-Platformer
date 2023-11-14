@@ -103,9 +103,10 @@ MonoBehaviour:
   xAxis: Horizontal
   speed: 10
   movementBoundariesMin: {x: -8.5, y: -10}
-  movementBoundariesMax: {x: 8.5, y: 100}
+  movementBoundariesMax: {x: 8.5, y: 1000}
   jumpForce: 5
   jumpcharge: 2
+  dodgeforce: 100
 --- !u!50 &2009188560810991476
 Rigidbody2D:
   serializedVersion: 4

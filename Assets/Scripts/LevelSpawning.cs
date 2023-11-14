@@ -20,6 +20,14 @@ public class LevelSpawning : MonoBehaviour
     // level prefabs
     public List<Transform> endingLevels = new List<Transform>();
 
+    // The list that holds the beginning level prefabs
+    // so that we can randomly spawn different starts 
+    // to the game levels
+    public List<Transform> beginningLevels = new List<Transform>();
+
+    // The position that the starting level prefab will be instantiated at
+    public Vector3 startLevel;
+
     // The position that the level prefab will be instantiated at
     public Vector3 nextLevel;
 
@@ -33,6 +41,10 @@ public class LevelSpawning : MonoBehaviour
 
     private void Start()
     {
+        startLevel = new Vector3(0, 0, 0);
+        Transform beginningLevel = Instantiate(beginningLevels[Random.Range(0, beginningLevels.Count - 1)],
+            startLevel, rotation);
+
         nextLevel = new Vector3(0, 10, 0);
     }
     // Update is called once per frame

@@ -365,17 +365,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829c6d6bfa6e2ba4381c3f7d834764ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelPrefab1: {fileID: 0}
-  levelPrefab2: {fileID: 0}
-  levelPrefab3: {fileID: 0}
-  levelPrefab4: {fileID: 0}
-  levelPrefab5: {fileID: 0}
-  currentLevel: {fileID: 8545025306204711825, guid: 6ffb502709606254b8f2d9636781d6d1, type: 3}
   playerPrefab: {fileID: 1884681978}
   levels:
-  - {fileID: 8545025306204711825, guid: 6ffb502709606254b8f2d9636781d6d1, type: 3}
+  - {fileID: 2055929011225760269, guid: 85a55245ef04ef54d957361aed79e473, type: 3}
   - {fileID: 1982531114007373253, guid: 3784be960fd842146bd344707861721b, type: 3}
   - {fileID: 1817935495911424992, guid: abb25483b2187d2438a3e56c98ae78c4, type: 3}
+  - {fileID: 5094899212526693203, guid: e345de771c60d1d4daad73eda4d668ed, type: 3}
+  endingLevels: []
   nextLevel: {x: 0, y: 0, z: 0}
   yCheckpoint: 4
 --- !u!1001 &46929436442362636

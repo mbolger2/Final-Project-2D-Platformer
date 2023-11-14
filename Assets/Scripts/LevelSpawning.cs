@@ -38,27 +38,29 @@ public class LevelSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.FloorToInt(StopWatch.Instance.time / 60f) != 1)
+        if (playerPrefab.position.y >= yCheckpoint)
         {
-            if (playerPrefab.position.y >= yCheckpoint)
-            {
-                // Spawn a new level above th player
-                Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)], 
-                    nextLevel, rotation);
-
-                // Increase the y level that the sections will be instantiated at
-                nextLevel.y += 10;
-
-                // Increase the y level that the player needs to clear for the next
-                // section to be instantiated
-                yCheckpoint += 10;
-            }
-        }
-        else
-        {
-            Transform endingLevel = Instantiate(endingLevels[Random.Range(0, endingLevels.Count - 1)],
+            // Spawn a new level above th player
+            Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)],
                 nextLevel, rotation);
+
+            // Increase the y level that the sections will be instantiated at
+            nextLevel.y += 10;
+
+            // Increase the y level that the player needs to clear for the next
+            // section to be instantiated
+            yCheckpoint += 10;
         }
+
+        //if (Mathf.FloorToInt(StopWatch.Instance.time / 60f) != 1)
+        //{
+            
+        //}
+        //else
+        //{
+        //    Transform endingLevel = Instantiate(endingLevels[Random.Range(0, endingLevels.Count - 1)],
+        //        nextLevel, rotation);
+        //}
 
     }
 }

@@ -43,6 +43,7 @@ public class LevelSpawning : MonoBehaviour
     //var for displaying player score
     public TextMeshProUGUI displayedscore;
     public int score = 0;
+
     private void Start()
     {
         startLevel = new Vector3(0, 0, 0);
@@ -56,8 +57,8 @@ public class LevelSpawning : MonoBehaviour
     {
         if (playerPrefab.position.y >= yCheckpoint)
         {
-            // Spawn a new level above th player
-            Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)],
+            // Spawn a new level above the player
+            Transform level = Instantiate(levels[Random.Range(0, levels.Count)],
                 nextLevel, rotation);
 
             // Increase the y level that the sections will be instantiated at
@@ -66,6 +67,7 @@ public class LevelSpawning : MonoBehaviour
             // Increase the y level that the player needs to clear for the next
             // section to be instantiated
             yCheckpoint += 10;
+
            //adds to score
             score++;
             displayedscore.text = score.ToString();

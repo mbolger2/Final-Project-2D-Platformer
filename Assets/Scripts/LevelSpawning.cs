@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class LevelSpawning : MonoBehaviour
 {
@@ -39,6 +40,9 @@ public class LevelSpawning : MonoBehaviour
     // level prefabs spawn with no z axis rotation
     Quaternion rotation = Quaternion.identity;
 
+    //var for displaying player score
+    public TextMeshProUGUI displayedscore;
+    public int score = 0;
     private void Start()
     {
         startLevel = new Vector3(0, 0, 0);
@@ -62,6 +66,9 @@ public class LevelSpawning : MonoBehaviour
             // Increase the y level that the player needs to clear for the next
             // section to be instantiated
             yCheckpoint += 10;
+           //adds to score
+            score++;
+            displayedscore.text = score.ToString();
         }
 
         //if (Mathf.FloorToInt(StopWatch.Instance.time / 60f) != 1)

@@ -607,6 +607,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[33].second.m_TileSpriteIndex
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2283136851051286424, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2283136851202226121, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
       propertyPath: m_TileAssetArray.Array.data[1].m_Data
       value: 
@@ -863,6 +867,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[178].second.m_TileSpriteIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2283136851202226126, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2283136851202226127, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -979,6 +987,14 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[1].m_RefCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2283136851240689566, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283136851947323658, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2283136852415622368, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1025,7 +1041,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2283136852415622374, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
       propertyPath: m_Name
-      value: LevelTemplate
+      value: LevelTemplate Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283136852415622374, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcacce631d37706418fe1501b7bf9351, type: 3}

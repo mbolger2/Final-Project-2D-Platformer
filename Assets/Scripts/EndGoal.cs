@@ -18,6 +18,8 @@ public class EndGoal : MonoBehaviour
     void Start()
     {
         isPaused = false;
+
+        winMenu = GameObject.FindGameObjectWithTag("WinMenu");
     }
 
     void OnTriggerEnter2D(Collider2D other)

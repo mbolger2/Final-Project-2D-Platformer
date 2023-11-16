@@ -50,7 +50,8 @@ public class LevelSpawning : MonoBehaviour
     private void Start()
     {
         startLevel = new Vector3(0, 0, 0);
-        Transform beginningLevel = Instantiate(beginningLevels[Random.Range(0, beginningLevels.Count - 1)],
+        Transform beginningLevel = Instantiate(
+            beginningLevels[Random.Range(0, beginningLevels.Count)],
             startLevel, rotation);
 
         nextLevel = new Vector3(0, 10, 0);
@@ -68,8 +69,9 @@ public class LevelSpawning : MonoBehaviour
             if (playerPrefab.position.y > yCheckpoint)
             {
                 // Pull a random prefab from the ending level list
-                Transform endingLevel = Instantiate(endingLevels[Random.Range(0, endingLevels.Count - 1)],
-                nextLevel, rotation);
+                Transform endingLevel = Instantiate(
+                    endingLevels[Random.Range(0, endingLevels.Count)],
+                    nextLevel, rotation);
             }
             
         }
@@ -79,7 +81,8 @@ public class LevelSpawning : MonoBehaviour
             if (playerPrefab.position.y >= yCheckpoint)
             {
                 // Spawn a new level above the player
-                Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)],
+                Transform level = Instantiate(
+                    levels[Random.Range(0, levels.Count)],
                     nextLevel, rotation);
 
                 // Increase the y level that the sections will be instantiated at

@@ -1003,7 +1003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTag: Player
-  winScene: Win Menu
+  winMenu: Win Menu
 --- !u!1 &6411824046435896752
 GameObject:
   m_ObjectHideFlags: 0

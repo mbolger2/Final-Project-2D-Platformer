@@ -72,6 +72,8 @@ public class LevelSpawning : MonoBehaviour
                 Transform endingLevel = Instantiate(
                     endingLevels[Random.Range(0, endingLevels.Count)],
                     nextLevel, rotation);
+
+                yCheckpoint += 10000;
             }
             
         }

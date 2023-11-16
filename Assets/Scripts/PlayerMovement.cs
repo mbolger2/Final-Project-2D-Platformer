@@ -86,13 +86,13 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //super jump
-        if(Input.GetKey(KeyCode.UpArrow) && onground) 
+        if(Input.GetKey(KeyCode.W) && onground) 
         {
             charger += Time.deltaTime;
             Debug.Log("charger = " + charger);
         }
 
-        if (Input.GetKeyUp(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.W))
         {
             discharge = true;
         }

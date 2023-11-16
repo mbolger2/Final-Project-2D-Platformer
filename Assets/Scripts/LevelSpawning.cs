@@ -40,9 +40,12 @@ public class LevelSpawning : MonoBehaviour
     // level prefabs spawn with no z axis rotation
     Quaternion rotation = Quaternion.identity;
 
-    //var for displaying player score
+    // var for displaying player score
     public TextMeshProUGUI displayedscore;
     public int score = 0;
+
+    // The time spent in the level
+    public float time;
 
     private void Start()
     {
@@ -55,33 +58,41 @@ public class LevelSpawning : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerPrefab.position.y >= yCheckpoint)
+        // The time spent in the level
+        time += Time.deltaTime;
+
+        // The time spent is greater than or equal to 1 minute
+        if (time >= 60f)
         {
-            // Spawn a new level above the player
-            Transform level = Instantiate(levels[Random.Range(0, levels.Count)],
+            // The player clears the y checkpoint
+            if (playerPrefab.position.y > yCheckpoint)
+            {
+                // Pull a random prefab from the ending level list
+                Transform endingLevel = Instantiate(endingLevels[Random.Range(0, endingLevels.Count - 1)],
                 nextLevel, rotation);
-
-            // Increase the y level that the sections will be instantiated at
-            nextLevel.y += 10;
-
-            // Increase the y level that the player needs to clear for the next
-            // section to be instantiated
-            yCheckpoint += 10;
-
-           //adds to score
-            score++;
-            displayedscore.text = score.ToString();
-        }
-
-        //if (Mathf.FloorToInt(StopWatch.Instance.time / 60f) != 1)
-        //{
+            }
             
-        //}
-        //else
-        //{
-        //    Transform endingLevel = Instantiate(endingLevels[Random.Range(0, endingLevels.Count - 1)],
-        //        nextLevel, rotation);
-        //}
+        }
+        else
+        {
+            // The player clears the y checkpoint
+            if (playerPrefab.position.y >= yCheckpoint)
+            {
+                // Spawn a new level above the player
+                Transform level = Instantiate(levels[Random.Range(0, levels.Count - 1)],
+                    nextLevel, rotation);
 
+                // Increase the y level that the sections will be instantiated at
+                nextLevel.y += 10;
+
+                // Increase the y level that the player needs to clear for the next
+                // section to be instantiated
+                yCheckpoint += 10;
+
+                //adds to score
+                score++;
+                displayedscore.text = score.ToString();
+            }
+        }
     }
 }

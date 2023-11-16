@@ -746,7 +746,8 @@ MonoBehaviour:
   - {fileID: 5094899212526693203, guid: e345de771c60d1d4daad73eda4d668ed, type: 3}
   - {fileID: 3526952627502830859, guid: bfd2ec47ed7298d4483f9d0cd8ad0daa, type: 3}
   - {fileID: 3610677449059200088, guid: cfee737c604cf3145b0f04643a7831a9, type: 3}
-  endingLevels: []
+  endingLevels:
+  - {fileID: 6411824046435896766, guid: 4806b888bc5962345a57b28114bfb83d, type: 3}
   beginningLevels:
   - {fileID: 155124038498934519, guid: 7e3e81a648658d34f9af5d13baa890a1, type: 3}
   - {fileID: 8545025306204711825, guid: 6ffb502709606254b8f2d9636781d6d1, type: 3}
@@ -756,6 +757,7 @@ MonoBehaviour:
   yCheckpoint: 4
   displayedscore: {fileID: 928759130}
   score: 0
+  time: 0
 --- !u!1001 &46929436442362636
 PrefabInstance:
   m_ObjectHideFlags: 0

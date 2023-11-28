@@ -31,8 +31,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Dodge Strength")]
     public float dodgeforce=100;
 
+
     [Header("Particle Effect")]
     public ParticleSystem jump;
+
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();

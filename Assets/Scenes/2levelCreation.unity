@@ -177,7 +177,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerRB: {fileID: 418354747}
   strength: 50
-  Direction: 0
+  Direction: 1
 --- !u!19719996 &361774044
 TilemapCollider2D:
   m_ObjectHideFlags: 0

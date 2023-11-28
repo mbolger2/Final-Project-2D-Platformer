@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Player Rigidbody")]
     public Rigidbody2D rb;
-
+    public Transform player;
 
     [Header("The Name of the X Axis Input")]
     public string xAxis;
@@ -29,8 +29,10 @@ public class PlayerMovement : MonoBehaviour
     float charger = 0.0f;
 
     [Header("Dodge Strength")]
-    public float dodgeforce=100;    
-    
+    public float dodgeforce=100;
+
+    [Header("Particle Effect")]
+    public ParticleSystem jump;
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -79,6 +81,13 @@ public class PlayerMovement : MonoBehaviour
         //}
         if(Input.GetButtonDown("Jump") && jumpcharge > 0)
         {
+            //if(jumpcharge == 1)
+            //{
+            //    this.jump.transform.position = player.transform.position;
+            //    this.jump.Play();
+            //}
+            this.jump.transform.position = player.transform.position;
+            this.jump.Play();
             rb.AddForce(Vector2.up * jumpForce * 100);
             jumpcharge--;
             onground = false;

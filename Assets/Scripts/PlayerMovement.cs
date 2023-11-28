@@ -29,8 +29,7 @@ public class PlayerMovement : MonoBehaviour
     float charger = 0.0f;
 
     [Header("Dodge Strength")]
-    public float dodgeforce=100;
-    
+    public float dodgeforce=100;    
     
     void Start()
     {

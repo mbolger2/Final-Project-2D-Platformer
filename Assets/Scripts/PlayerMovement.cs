@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
     [Header("Particle Effect")]
     public ParticleSystem jump;
 
+    [Header("Animations")]
+    public Animator animator;
+    public string shakeAnimParameter;
+
     void Start()
     {
         rb = this.gameObject.GetComponent<Rigidbody2D>();
@@ -100,11 +104,13 @@ public class PlayerMovement : MonoBehaviour
         {
             charger += Time.deltaTime;
             Debug.Log("charger = " + charger);
+            animator.SetTrigger(shakeAnimParameter);
         }
 
         if (Input.GetKeyUp(KeyCode.W))
         {
             discharge = true;
+            
         }
         if (discharge && onground)
         {

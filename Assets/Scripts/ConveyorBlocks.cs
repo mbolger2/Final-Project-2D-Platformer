@@ -12,22 +12,21 @@ public class ConveyorBlocks : MonoBehaviour
     public bool Direction = true;
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        Debug.Log("I have collided");
         if(collision.gameObject.tag == "Player")
         {
+            Debug.Log("Ihave collided with player");
             if(Direction == true) // left
             {
+                Debug.Log("I go left");
                 PlayerRB.AddForce(Vector2.left * strength);
             }
             else // right
             {
+                Debug.Log("I right");
                 PlayerRB.AddForce(Vector2.right * strength);
             }
         }

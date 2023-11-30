@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Dodge Strength")]
     public float dodgeforce=100;
+    public TextMeshProUGUI chargestrength;
 
 
     [Header("Particle Effect")]
@@ -103,6 +106,7 @@ public class PlayerMovement : MonoBehaviour
         {
             charger += Time.deltaTime;
             Debug.Log("charger = " + charger);
+            chargestrength.text = charger.ToString("0.00"); 
             animator.SetTrigger(shakeAnimParameter);
         }
 
@@ -114,6 +118,7 @@ public class PlayerMovement : MonoBehaviour
         if (discharge && onground)
         {
             rb.AddForce(Vector2.up * charger * jumpForce *100);
+            chargestrength.text = "0";
             onground = false;
             discharge = false;
             charger = 0.0f;

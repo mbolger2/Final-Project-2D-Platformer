@@ -563,6 +563,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5291727714784596184, guid: ebe74950cad0e754785ac919e0066d0e, type: 3}
+      propertyPath: ShapeModule.angle
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291727714784596184, guid: ebe74950cad0e754785ac919e0066d0e, type: 3}
       propertyPath: SizeModule.enabled
       value: 1
       objectReference: {fileID: 0}
@@ -1047,6 +1051,9 @@ MonoBehaviour:
   - {fileID: 5734502408035022888, guid: 592b8d2dc1b31b443b3203c779057a80, type: 3}
   - {fileID: 8262135992726875341, guid: 50b5a080894c7244896f0652e6a9af3f, type: 3}
   - {fileID: 3023805562426512749, guid: 391977bff3004a246bf63db79caeeef0, type: 3}
+  - {fileID: 2510179981807473555, guid: 119b24e94f6ca9e4a8b3634134d1e43e, type: 3}
+  - {fileID: 8632610694170509868, guid: 437501ee5a857fa4db1d2278900401b4, type: 3}
+  - {fileID: 2493223649611898753, guid: 6993e8099df1c4d4bb5fca9b131a27d5, type: 3}
   endingLevels:
   - {fileID: 6411824046435896766, guid: 4806b888bc5962345a57b28114bfb83d, type: 3}
   - {fileID: 1425445360233310505, guid: a3c2ed156a84798408d43a616f5658c5, type: 3}

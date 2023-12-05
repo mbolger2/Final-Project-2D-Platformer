@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 17298286}
   - component: {fileID: 17298285}
   - component: {fileID: 17298284}
-  - component: {fileID: 17298283}
   m_Layer: 0
   m_Name: Conveyor
-  m_TagString: Untagged
+  m_TagString: ConveyorBlockLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,22 +333,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
---- !u!114 &17298283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17298281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367901ed01f50bb48ae365dcd2697759, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerRB: {fileID: 0}
-  strength: 50
-  playerTF: {fileID: 0}
-  Direction: 1
 --- !u!1001 &3916412029016897933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1440,6 +1423,10 @@ PrefabInstance:
     - target: {fileID: 2283136852415622374, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
       propertyPath: m_Name
       value: ConveyorTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2283136852415622374, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
+      propertyPath: m_TagString
+      value: ConveyorBlock
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcacce631d37706418fe1501b7bf9351, type: 3}

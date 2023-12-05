@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 6060473120989029612}
   - component: {fileID: 9067165856183301343}
   - component: {fileID: 7227304803003481804}
-  - component: {fileID: 9161957398878413121}
   m_Layer: 6
   m_Name: conveyors left
-  m_TagString: Untagged
+  m_TagString: ConveyorBlockLeft
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -260,21 +259,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
---- !u!114 &9161957398878413121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4292447417347399886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367901ed01f50bb48ae365dcd2697759, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerRB: {fileID: 0}
-  strength: 50
-  Direction: 1
 --- !u!1 &8262135992726875331
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +271,7 @@ GameObject:
   - component: {fileID: 8262135992726875340}
   m_Layer: 0
   m_Name: conveyor_level3
-  m_TagString: Untagged
+  m_TagString: ConveyorBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2278,10 +2262,9 @@ GameObject:
   - component: {fileID: 8262135994168615553}
   - component: {fileID: 8262135994168615552}
   - component: {fileID: 8262135994168615555}
-  - component: {fileID: 8262135994168615554}
   m_Layer: 6
   m_Name: conveyors right
-  m_TagString: Untagged
+  m_TagString: ConveyorBlockRight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2586,18 +2569,3 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
---- !u!114 &8262135994168615554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8262135994168615558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367901ed01f50bb48ae365dcd2697759, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerRB: {fileID: 0}
-  strength: 50
-  Direction: 0

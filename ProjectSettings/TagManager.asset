@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Win Menu
+  - ConveyorBlockLeft
+  - ConveyorBlockRight
+  - ConveyorBlock
   layers:
   - Default
   - TransparentFX

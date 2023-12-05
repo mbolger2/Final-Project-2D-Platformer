@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ConveyorBlocks : MonoBehaviour
 {
-    //the player's rigidbody
-    public Rigidbody2D PlayerRB;
-    public float strength = 50.0f;
     public Transform playerTF;
     private Vector2 temp;
 
@@ -18,25 +15,21 @@ public class ConveyorBlocks : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log("I have collided");
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "ConveyorBlockLeft")
         {
-            Debug.Log("Ihave collided with player");
-            if(Direction == true) // left
-            {
-                Debug.Log("I go left");
-                //PlayerRB.AddForce(Vector2.left * strength);
-                temp = playerTF.position;
-                temp.x -= 0.1f;
-                playerTF.position = temp;
-            }
-            else // right
-            {
-                Debug.Log("I right");
-                //PlayerRB.AddForce(Vector2.right * strength);
-                temp = playerTF.position;
-                temp.x+= 0.1f;
-                playerTF.position = temp;
-            }
+            Debug.Log("I go left");
+            //PlayerRB.AddForce(Vector2.left * strength);
+            temp = playerTF.position;
+            temp.x -= 0.1f;
+            playerTF.position = temp;
+        }
+        if(collision.gameObject.tag == "ConveyorBlockRight")
+        {
+            Debug.Log("I right");
+            //PlayerRB.AddForce(Vector2.right * strength);
+            temp = playerTF.position;
+            temp.x += 0.1f;
+            playerTF.position = temp;
         }
     }
 }

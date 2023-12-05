@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2009188560810991474}
   - component: {fileID: 2009188560810991476}
   - component: {fileID: 2009188560810991475}
+  - component: {fileID: 7219124857728004245}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 2009188560810991476}
+  player: {fileID: 0}
   xAxis: Horizontal
   speed: 10
   movementBoundariesMin: {x: -8.5, y: -10}
@@ -107,6 +109,10 @@ MonoBehaviour:
   jumpForce: 5
   jumpcharge: 2
   dodgeforce: 100
+  chargestrength: {fileID: 0}
+  jump: {fileID: 0}
+  animator: {fileID: 0}
+  shakeAnimParameter: 
 --- !u!50 &2009188560810991476
 Rigidbody2D:
   serializedVersion: 4
@@ -154,3 +160,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.75850236, y: 0.69295305}
   m_EdgeRadius: 0
+--- !u!114 &7219124857728004245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009188560810991479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367901ed01f50bb48ae365dcd2697759, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTF: {fileID: 2009188560810991477}
+  Direction: 1

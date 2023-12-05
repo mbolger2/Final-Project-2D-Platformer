@@ -1054,6 +1054,7 @@ MonoBehaviour:
   - {fileID: 2510179981807473555, guid: 119b24e94f6ca9e4a8b3634134d1e43e, type: 3}
   - {fileID: 8632610694170509868, guid: 437501ee5a857fa4db1d2278900401b4, type: 3}
   - {fileID: 2493223649611898753, guid: 6993e8099df1c4d4bb5fca9b131a27d5, type: 3}
+  - {fileID: 2997615130320175834, guid: db032a41707a2fb4db5b6eac6666e229, type: 3}
   endingLevels:
   - {fileID: 6411824046435896766, guid: 4806b888bc5962345a57b28114bfb83d, type: 3}
   - {fileID: 1425445360233310505, guid: a3c2ed156a84798408d43a616f5658c5, type: 3}
@@ -1064,6 +1065,7 @@ MonoBehaviour:
   - {fileID: 2283136852415622368, guid: fcacce631d37706418fe1501b7bf9351, type: 3}
   - {fileID: 1322258688930144203, guid: 25162331268c5494487b4e088e73c35c, type: 3}
   - {fileID: 7124702879729573408, guid: c816c892f387ea5468b2cfcd585d732f, type: 3}
+  - {fileID: 50745034856290108, guid: 6fe8e64f852b3bd40834754128b35288, type: 3}
   startLevel: {x: 0, y: 0, z: 0}
   nextLevel: {x: 0, y: 0, z: 0}
   yCheckpoint: 4
